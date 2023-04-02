@@ -22,8 +22,8 @@ Then, updated the main method in your `Program` class to use `RetroHost`:
 
 ```csharp
     public static void Main(string[] args) =>
-        RetroRuntime.UseStartup<Startup>(args)
-                    .Run();
+        Retronaut.UseStartup<Startup>(args)
+                 .Run();
 ```
 
 ## Running a Windows Service
@@ -41,6 +41,6 @@ Then, update your `Program` class to use `RetroHost`:
 
 ```csharp
     public static void Main(string[] args) =>
-        RetroRuntime.UseStartup<Startup>(args)
-                    .Run<MyService>();
+        Retronaut.UseStartup<Startup>(args)
+                 .Run<MyService>();
 ```
