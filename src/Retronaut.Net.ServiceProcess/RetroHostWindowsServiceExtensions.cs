@@ -17,13 +17,9 @@ public static class RetroHostWindowsServiceExtensions
     /// <remarks>
     /// This method should be called from the main thread of your application.
     /// </remarks>
-    public static void Run<T>(this RetroHost instance)
-        where T : WindowsService
-    {
-        IHost host = instance.HostBuilder.ConfigureServices((hostContext, services) =>
-        {
+    public static void Run<T>(this IRetroHost instance)
+        where T : WindowsService =>
+        instance.Configure(hostBuilder => hostBuilder.ConfigureServices((_, services) => {
             services.AddHostedService<T>();
-        }).Build();
-        host.Run();
-    }
+        })).Run();
 }
