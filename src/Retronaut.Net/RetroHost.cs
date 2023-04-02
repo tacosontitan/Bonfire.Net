@@ -7,7 +7,7 @@ namespace Retronaut.Net;
 /// </summary>
 public class RetroHost
 {
-    internal IHostBuilder HostBuilder { get; private set; }
+    public IHostBuilder HostBuilder { get; private set; }
     private RetroHost(IHostBuilder hostBuilder) =>
         HostBuilder = hostBuilder;
     /// <summary>

@@ -28,7 +28,7 @@ Then, updated the main method in your `Program` class to use `RetroHost`:
 
 ## Running a Windows Service
 
-To run your application as a Windows Service, you'll need to add a reference to the `Retronaut.Net.Windows` package. Then derive from `WindowsService` instead of `ServiceBase`:
+To run your application as a Windows Service, you'll need to add a reference to the `Retronaut.Net.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
 
 ```csharp
 public class MyService : WindowsService

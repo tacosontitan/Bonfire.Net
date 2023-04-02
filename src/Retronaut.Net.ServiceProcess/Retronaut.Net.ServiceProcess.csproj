@@ -9,4 +9,12 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Retronaut.Net\Retronaut.Net.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="LegacyAssemblies">
+    <Reference Include="System.ServiceProcess" />
+  </ItemGroup>
+
 </Project>
