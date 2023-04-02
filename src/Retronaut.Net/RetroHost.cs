@@ -1,28 +1,43 @@
+using System;
 using Microsoft.Extensions.Hosting;
 
 namespace Retronaut.Net;
 
 /// <summary>
-/// Represents a minimal host for running a <see cref="WindowsService"/>.
+/// Represents a minimal host running applications.
 /// </summary>
-public class RetroHost
+public class RetroHost : IRetroHost
 {
-    public IHostBuilder HostBuilder { get; private set; }
-    private RetroHost(IHostBuilder hostBuilder) =>
-        HostBuilder = hostBuilder;
+    private IHostBuilder _hostBuilder;
+    /// <summary>
+    /// Creates a new <see cref="RetroHost"/> instance.
+    /// </summary>
+    /// <param name="args">The command line args.</param>
+    public RetroHost(params string[] args) =>
+        _hostBuilder = Host.CreateDefaultBuilder(args);
+    /// <summary>
+    /// Configures the host using the specified <see cref="Action{T}"/>.
+    /// </summary>
+    /// <param name="configure">The <see cref="Action{T}"/> to configure the host.</param>
+    /// <returns>The current <see cref="IRetroHost"/> instance.</returns>
+    public IRetroHost Configure(Action<IHostBuilder> configure) {
+        if (configure is null)
+            throw new ArgumentNullException(nameof(configure));
+
+        configure(_hostBuilder);
+        return this;
+    }
     /// <summary>
     /// Specifies the startup type to be used by the host.
     /// </summary>
     /// <typeparam name="T">The type containing the startup methods for the application.</typeparam>
     /// <param name="args">The command line args.</param>
-    /// <returns>A <see cref="RetroHost"/> instance.</returns>
-    public static RetroHost UseStartup<T>(string[] args)
+    /// <returns>A <see cref="IRetroHost"/> instance.</returns>
+    public IRetroHost UseStartup<T>(params string[] args)
         where T : class, new()
     {
-        var hostBuilder = Host.CreateDefaultBuilder(args)
-            .UseStartup<T>();
-
-        return new RetroHost(hostBuilder);
+        _hostBuilder = _hostBuilder.UseStartup<T>();
+        return this;
     }
     /// <summary>
     /// Runs the the application with hosting and dependency injection support.
@@ -32,7 +47,7 @@ public class RetroHost
     /// </remarks>
     public void Run()
     {
-        IHost host = HostBuilder.Build();
+        IHost host = _hostBuilder.Build();
         host.Run();
     }
 }
