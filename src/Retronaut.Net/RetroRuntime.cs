@@ -6,7 +6,7 @@ namespace Retronaut.Net;
 /// <summary>
 /// Defines a simplified extension methods for running applications using <see cref="IRetroHost"/>.
 /// </summary>
-public static class Retronaut
+public static class RetroRuntime
 {
     /// <summary>
     /// Creates a new <see cref="IRetroHost"/> instance using the specified startup type.

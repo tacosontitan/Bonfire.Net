@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace ConsoleExample;
 
 internal sealed class Startup
