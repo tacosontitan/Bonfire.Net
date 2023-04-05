@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Retronaut.Net\Retronaut.Net.csproj" />
+    <ProjectReference Include="..\Ignition.Net\Ignition.Net.csproj" />
   </ItemGroup>
 
   <ItemGroup Label="LegacyAssemblies">
