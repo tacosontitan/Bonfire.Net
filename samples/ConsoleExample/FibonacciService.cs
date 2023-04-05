@@ -15,10 +15,10 @@ internal sealed class FibonacciService : IHostedService
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         // Do some work to demonstrate starting a hosted service.
-        _logger.Log(LogLevel.Debug, $"Fibonacci service started.");
-        for (int i = 0; i < 100; i++)
+        _logger.Log(LogLevel.Information, $"Fibonacci service started.");
+        for (int i = 0; i < 40; i++)
         {
-            _logger.Log(LogLevel.Information, $"{{0, {Fibonacci(i)}}}");
+            _logger.Log(LogLevel.Information, $"{{{i}, {Fibonacci(i)}}}");
             await Task.Delay(TimeSpan.FromMilliseconds(25));
         }
 
@@ -30,5 +30,8 @@ internal sealed class FibonacciService : IHostedService
             _ => Fibonacci(n - 1) + Fibonacci(n - 2)
         };
     }
-    public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+    public Task StopAsync(CancellationToken cancellationToken) {
+        _logger.Log(LogLevel.Information, $"Fibonacci service stopped.");
+        return Task.CompletedTask;
+    }
 }
