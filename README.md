@@ -2,9 +2,9 @@
 
 Retronaut.Net is a collection of libraries that make it easy to add hosting and dependency injection to your .NET Framework applications. Say goodbye to boilerplate and hello to a cleaner, more testable codebase.
 
-## Using `RetroHost`
+## Using `RetroRuntime`
 
-Working with `RetroHost` will simplify the process of creating a new host for your application.
+Working with `RetroRuntime` will simplify the process of creating a new host for your application.
 
 Get started by creating a `Startup` class with a `ConfigureServices` method:
 
@@ -18,7 +18,7 @@ public class Startup
 }
 ```
 
-Then, updated the main method in your `Program` class to use `RetroHost`:
+Then, updated the main method in your `Program` class to use `RetroRuntime`:
 
 ```csharp
     public static void Main(string[] args) =>
