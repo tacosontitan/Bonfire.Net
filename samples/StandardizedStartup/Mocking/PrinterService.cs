@@ -16,7 +16,6 @@ internal sealed class PrinterService : IHostedService
     {
         // Do some work to demonstrate starting a hosted service.
         _logger.Log(LogLevel.Information, $"Printer service started.");
-        _logger.Log(LogLevel.Information, $"{{0, 0}}");
         for (int i = 0; i < 25; i++)
         {
             _logger.Log(LogLevel.Information, i.ToString());
