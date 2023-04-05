@@ -1,10 +1,10 @@
-using Retronaut.Net;
+using Ignition.Net;
 
 namespace ConsoleExample;
 
 public class Program
 {
     public static void Main(string[] args) =>
-        RetroRuntime.UseStartup<Startup>(args)
-                    .Run();
+        Ignite.UseStartup<Startup>(args)
+              .Run();
 }
