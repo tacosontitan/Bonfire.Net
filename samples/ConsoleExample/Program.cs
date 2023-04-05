@@ -1,8 +1,10 @@
+using Retronaut.Net;
+
 namespace ConsoleExample;
 
 public class Program
 {
     public static void Main(string[] args) =>
-        Retronaut.UseStartup<Startup>(args)
-                 .Run();
+        RetroRuntime.UseStartup<Startup>(args)
+                    .Run();
 }
