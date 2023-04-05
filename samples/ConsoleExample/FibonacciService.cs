@@ -16,16 +16,17 @@ internal sealed class FibonacciService : IHostedService
     {
         // Do some work to demonstrate starting a hosted service.
         _logger.Log(LogLevel.Information, $"Fibonacci service started.");
+        _logger.Log(LogLevel.Information, $"{{0, 0}}");
         for (int i = 0; i < 40; i++)
         {
-            _logger.Log(LogLevel.Information, $"{{{i}, {Fibonacci(i)}}}");
+            _logger.Log(LogLevel.Information, $"{{{i + 1}, {Fibonacci(i)}}}");
             await Task.Delay(TimeSpan.FromMilliseconds(25));
         }
 
         // Determines the nth Fibonacci number.
         int Fibonacci(int n) => n switch
         {
-            0 => 0,
+            0 => 1,
             1 => 1,
             _ => Fibonacci(n - 1) + Fibonacci(n - 2)
         };
