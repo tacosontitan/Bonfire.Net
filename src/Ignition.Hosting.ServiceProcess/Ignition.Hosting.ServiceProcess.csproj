@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Title>$(AssemblyName)</Title>
+		<Version>$(AssemblyVersion)</Version>
+		<Authors>tacosontitan</Authors>
+		<Copyright>Copyright © 2023 tacosontitan and contibutors</Copyright>
+		<PackageProjectUrl>https://github.com/tacosontitan/Ignition.Net</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/tacosontitan/Ignition.Net</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>host;hosting;dotnet;di;dependency;injection;startup</PackageTags>
+		<PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<AssemblyVersion>2023.4.7.1</AssemblyVersion>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup Label="PackageReferences">
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Ignition.Net\Ignition.Hosting.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Label="LegacyAssemblies">
+		<Reference Include="System.ServiceProcess" />
+	</ItemGroup>
+
+</Project>
