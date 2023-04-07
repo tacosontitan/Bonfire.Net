@@ -3,7 +3,7 @@
 /// <summary>
 /// Extension methods for setting up Windows services in an <see cref="IHostBuilder" />.
 /// </summary>
-public static class HostingExtensions
+public static class HostExtensions
 {
     /// <summary>
     /// Specifies the startup type to be used by the host.
