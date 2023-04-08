@@ -34,7 +34,7 @@ We believe in keeping the community informed, so here's a few more tidbits of in
 The primary objective of Bonfire.Net is to make it easy to add hosting and dependency injection to your .NET Framework applications. To do this, we offer a `static class` called `Ignite` that provides a simple way to bootstrap your application:
 
 ```csharp
-    public static void Main(string[] args) => Ignite.Run();
+public static void Main(string[] args) => Ignite.Run();
 ```
 
 ### ⚙️ Configuring the host
@@ -42,22 +42,22 @@ The primary objective of Bonfire.Net is to make it easy to add hosting and depen
 The `Ignite` class provides a number of methods that can be used to configure the host. For example, you can configure the host to use a specific startup class:
 
 ```csharp
-    public static void Main(string[] args) =>
-        Ignite.UseStartup<Startup>(args)
-              .Run();
+public static void Main(string[] args) =>
+    Ignite.UseStartup<Startup>(args)
+            .Run();
 ```
 
 You can also configure the host manually by providing an `Action<IHostBuilder>`:
 
 ```csharp
-    public static void Main() =>
-        Ignite.Configure(builder =>
-        {
-            builder.UseContentRoot(Directory.GetCurrentDirectory());
-            builder.UseEnvironment(EnvironmentName.Development);
-            builder.UseStartup<Startup>();
-        })
-        .Run();
+public static void Main() =>
+    Ignite.Configure(builder =>
+    {
+        builder.UseContentRoot(Directory.GetCurrentDirectory());
+        builder.UseEnvironment(EnvironmentName.Development);
+        builder.UseStartup<Startup>();
+    })
+    .Run();
 ```
 
 ### ▶️ Creating a `Startup` class
@@ -88,7 +88,7 @@ public class MyService : WindowsService
 Then, update your `Program` class to use `Ignite`:
 
 ```csharp
-    public static void Main(string[] args) =>
-        Ignite.UseStartup<Startup>(args)
-              .Run<MyService>();
+public static void Main(string[] args) =>
+    Ignite.UseStartup<Startup>(args)
+            .Run<MyService>();
 ```
