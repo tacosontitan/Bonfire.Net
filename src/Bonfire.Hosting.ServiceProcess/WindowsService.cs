@@ -17,7 +17,6 @@
 using System.ServiceProcess;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace Bonfire.Hosting.ServiceProcess;
@@ -27,11 +26,12 @@ namespace Bonfire.Hosting.ServiceProcess;
 /// </summary>
 public abstract class WindowsService : ServiceBase, IHostedService
 {
-    public virtual void Configure(IServiceCollection services) { }
+    /// <inheritdoc/>
     public Task StartAsync(CancellationToken cancellationToken) {
         ServiceBase.Run(this);
         return Task.CompletedTask;
     }
+    /// <inheritdoc/>
     public Task StopAsync(CancellationToken cancellationToken)
     {
         Stop();
