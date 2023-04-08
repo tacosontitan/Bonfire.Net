@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Title>$(AssemblyName)</Title>
-		<Version>2023.4.7.1</Version>
+		<Version>2023.4.8.1</Version>
 		<PackageVersion>$(AssemblyVersion)</PackageVersion>
 		<Authors>tacosontitan</Authors>
 		<Copyright>Copyright © 2023 tacosontitan and contibutors</Copyright>
@@ -19,9 +19,17 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>bonfire.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\..\LICENSE">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="..\..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
