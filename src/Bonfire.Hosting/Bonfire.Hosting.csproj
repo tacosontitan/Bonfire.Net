@@ -8,7 +8,7 @@
 		<Authors>tacosontitan</Authors>
 		<Copyright>Copyright © 2023 tacosontitan and contibutors</Copyright>
 		<PackageProjectUrl>https://github.com/tacosontitan/Ignition.Net</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/tacosontitan/Ignition.Net</RepositoryUrl>
+		<RepositoryUrl>https://github.com/tacosontitan/Bonfire</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>host;hosting;dotnet;di;dependency;injection;startup</PackageTags>
 		<PackageReleaseNotes>Initial release.</PackageReleaseNotes>
@@ -18,7 +18,7 @@
 		<Description>A lightweight solution that effectively reduces the boilerplate for adding hosting and dependency injection support to your applications.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageIcon>ignition.png</PackageIcon>
+		<PackageIcon>bonfire.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -26,7 +26,7 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
-		<None Include="..\..\resources\ignition.png">
+		<None Include="..\..\resources\bonfire.png">
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
 		</None>
