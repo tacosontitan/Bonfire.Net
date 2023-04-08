@@ -27,7 +27,8 @@ public static class Ignite
     /// <summary>
     /// Creates a new <see cref="IIgnitable"/> instance using the specified startup type.
     /// </summary>
-    /// <param name="instance">The <see cref="IIgnitable"/> instance.</param>
+    /// <typeparam name="T">The type containing the startup methods for the application.</typeparam>
+    /// <param name="args">The command line arguments to be passed to the application.</param>
     /// <remarks>
     /// This method should be called from the main thread of your application.
     /// </remarks>
