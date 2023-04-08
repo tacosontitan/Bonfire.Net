@@ -1,4 +1,4 @@
-using Ignition.Net;
+using Bonfire.Hosting;
 
 namespace ConsoleExample;
 
