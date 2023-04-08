@@ -14,6 +14,8 @@
  * limitations under the License.
  **************************************************************************/
 
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Microsoft.Extensions.Hosting;
 
 /// <summary>
@@ -32,6 +34,32 @@ public static class HostExtensions
         return hostBuilder.ConfigureServices((hostContext, services) =>
         {
             var startup = new T();
+            Configure(startup, hostBuilder);
+            ConfigureServices(startup, services);
+        });
+    }
+
+    private static void Configure<T>(T startup, IHostBuilder builder)
+    {
+        try
+        {
+            // Invoke the Configure method on the startup instance.
+            typeof(T).InvokeMember(
+                "Configure",
+                System.Reflection.BindingFlags.InvokeMethod,
+                null,
+                startup,
+                new object[] { builder }
+            );
+        }
+        catch { /* Gracefully ignore. */ }
+    }
+
+    private static void ConfigureServices<T>(T startup, IServiceCollection services)
+    {
+        try
+        {
+            // Invoke the ConfigureServices method on the startup instance.
             typeof(T).InvokeMember(
                 "ConfigureServices",
                 System.Reflection.BindingFlags.InvokeMethod,
@@ -39,6 +67,7 @@ public static class HostExtensions
                 startup,
                 new object[] { services }
             );
-        });
+        }
+        catch { /* Gracefully ignore. */ }
     }
 }
