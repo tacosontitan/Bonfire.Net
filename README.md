@@ -70,6 +70,34 @@ public class Startup
 }
 ```
 
+#### 🏗️ Using `Ignition` for configuration
+
+For those who like compile-time enforcement, the `Ignition` class provides an alternative to the reflective approach used by the `Startup` class that ensures method names don't have typos. To use it, derive your `Startup` class from `Ignition` and override the methods you need:
+
+```csharp
+internal sealed class Startup : Ignition
+{
+    protected override void Configure(IHostBuilder builder)
+    {
+        // Add configuration here
+    }
+    protected override void ConfigureServices(IServiceCollection services)
+    {
+        // Add services here
+    }
+}
+```
+
+Then, update your `Program` class to use `Ignite` and the `UseIgnition` method which constrains the type argument to ensure it derives from `Ignition`:
+
+```csharp
+public static void Main(string[] args) =>
+    Ignite.UseIgnition<Startup>(args)
+          .Run();
+```
+
+There is no inherit behavior in the `Ignition` class, so you'll need to provide your own implementation for each method you override.
+
 ## 🖥️ Hosting a Windows service
 
 To run your application as a Windows Service, you'll need to add a reference to the `Bonfire.Hosting.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
