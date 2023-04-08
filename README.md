@@ -1,6 +1,6 @@
-# Bonfire
+# ❤️‍🔥 Bonfire.Net
 
-Bonfire is a collection of libraries that make it easy to add hosting and dependency injection to your .NET Framework applications. Say goodbye to boilerplate and hello to a cleaner, more testable codebase.
+Bonfire.Net is a collection of libraries that make it easy to add hosting and dependency injection to your .NET Framework applications. Say goodbye to boilerplate and hello to a cleaner, more testable codebase.
 
 ![License](https://img.shields.io/github/license/tacosontitan/Bonfire.Net?logo=github&style=for-the-badge)
 
