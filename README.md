@@ -29,9 +29,38 @@ We believe in keeping the community informed, so here's a few more tidbits of in
 ![Size](https://img.shields.io/github/languages/code-size/tacosontitan/Bonfire.Net?logo=github&style=for-the-badge)
 ![Line Count](https://img.shields.io/tokei/lines/github/tacosontitan/Bonfire.Net?logo=github&style=for-the-badge)
 
-## Using `Ignite`
+## 🔥 Working with Bonfire.Net
 
-Working with `Ignite` will simplify the process of creating a new host for your application.
+The primary objective of Bonfire.Net is to make it easy to add hosting and dependency injection to your .NET Framework applications. To do this, we offer a `static class` called `Ignite` that provides a simple way to bootstrap your application:
+
+```csharp
+    public static void Main(string[] args) => Ignite.Run();
+```
+
+### ⚙️ Configuring the host
+
+The `Ignite` class provides a number of methods that can be used to configure the host. For example, you can configure the host to use a specific startup class:
+
+```csharp
+    public static void Main(string[] args) =>
+        Ignite.UseStartup<Startup>(args)
+              .Run();
+```
+
+You can also configure the host manually by providing an `Action<IHostBuilder>`:
+
+```csharp
+    public static void Main() =>
+        Ignite.Configure(builder =>
+        {
+            builder.UseContentRoot(Directory.GetCurrentDirectory());
+            builder.UseEnvironment(EnvironmentName.Development);
+            builder.UseStartup<Startup>();
+        })
+        .Run();
+```
+
+### ▶️ Creating a `Startup` class
 
 Get started by creating a `Startup` class with a `ConfigureServices` method:
 
@@ -45,17 +74,9 @@ public class Startup
 }
 ```
 
-Then, updated the main method in your `Program` class to use `Ignite`:
+## 🖥️ Hosting a Windows service
 
-```csharp
-    public static void Main(string[] args) =>
-        Ignite.UseStartup<Startup>(args)
-              .Run();
-```
-
-## Running a Windows Service
-
-To run your application as a Windows Service, you'll need to add a reference to the `Bonfire.Framework.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
+To run your application as a Windows Service, you'll need to add a reference to the `Bonfire.Hosting.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
 
 ```csharp
 public class MyService : WindowsService
