@@ -44,7 +44,7 @@ The `Ignite` class provides a number of methods that can be used to configure th
 ```csharp
 public static void Main(string[] args) =>
     Ignite.UseStartup<Startup>(args)
-            .Run();
+          .Run();
 ```
 
 You can also configure the host manually by providing an `Action<IHostBuilder>`:
@@ -90,5 +90,5 @@ Then, update your `Program` class to use `Ignite`:
 ```csharp
 public static void Main(string[] args) =>
     Ignite.UseStartup<Startup>(args)
-            .Run<MyService>();
+          .Run<MyService>();
 ```
