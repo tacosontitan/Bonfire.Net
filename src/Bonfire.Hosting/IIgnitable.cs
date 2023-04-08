@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Hosting;
 
-namespace Ignition.Net;
+namespace Bonfire.Hosting;
 
 /// <summary>
 /// Defines a common interface for building an <see cref="IHost"/> instance using Retronaut.Net.

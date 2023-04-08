@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Retronaut.Net.Windows;
+namespace Bonfire.Hosting.ServiceProcess;
 
 /// <summary>
 /// Represents a modern-ish Windows service.

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>net48</TargetFramework>
 		<Title>$(AssemblyName)</Title>
 		<Version>$(AssemblyVersion)</Version>
 		<Authors>tacosontitan</Authors>
@@ -29,7 +29,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Ignition.Net\Ignition.Hosting.csproj" />
+		<ProjectReference Include="..\Bonfire.Hosting\Bonfire.Hosting.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Label="LegacyAssemblies">

@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Hosting;
 
-namespace Ignition.Net;
+namespace Bonfire.Hosting;
 
 /// <summary>
 /// Defines a simplified extension methods for running applications using <see cref="IIgnitable"/>.

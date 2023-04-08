@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Hosting;
 
-namespace Ignition.Net;
+namespace Bonfire.Hosting;
 
 /// <summary>
 /// Represents a minimal host running applications.

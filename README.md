@@ -1,6 +1,6 @@
-# Ignition.Net
+# Bonfire
 
-Ignition.Net is a collection of libraries that make it easy to add hosting and dependency injection to your .NET Framework applications. Say goodbye to boilerplate and hello to a cleaner, more testable codebase.
+Bonfire is a collection of libraries that make it easy to add hosting and dependency injection to your .NET Framework applications. Say goodbye to boilerplate and hello to a cleaner, more testable codebase.
 
 ## Using `Ignite`
 
@@ -28,7 +28,7 @@ Then, updated the main method in your `Program` class to use `Ignite`:
 
 ## Running a Windows Service
 
-To run your application as a Windows Service, you'll need to add a reference to the `Ignition.Net.Framework.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
+To run your application as a Windows Service, you'll need to add a reference to the `Bonfire.Framework.ServiceProcess` package. Then derive from `WindowsService` instead of `ServiceBase`:
 
 ```csharp
 public class MyService : WindowsService

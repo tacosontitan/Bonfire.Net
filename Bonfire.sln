@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7366F508-1DDD-46DB-82C0-978C5F0D1F92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ignition.Hosting", "src\Ignition.Hosting\Ignition.Hosting.csproj", "{A2E57A4A-0CB9-4568-8A0D-B8D78CE2ACD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonfire.Hosting", "src\Bonfire.Hosting\Bonfire.Hosting.csproj", "{A2E57A4A-0CB9-4568-8A0D-B8D78CE2ACD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ignition.Hosting.ServiceProcess", "src\Ignition.Hosting.ServiceProcess\Ignition.Hosting.ServiceProcess.csproj", "{65DA2F92-12AF-4B9A-8A50-05209EB1DBF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonfire.Hosting.ServiceProcess", "src\Bonfire.Hosting.ServiceProcess\Bonfire.Hosting.ServiceProcess.csproj", "{65DA2F92-12AF-4B9A-8A50-05209EB1DBF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{22AEC9E8-5D07-48C2-AEA3-B503411E8BF4}"
 EndProject

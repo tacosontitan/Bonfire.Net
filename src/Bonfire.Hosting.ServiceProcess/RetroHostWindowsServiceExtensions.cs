@@ -1,8 +1,8 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Retronaut.Net.Windows;
+using Bonfire.Hosting.ServiceProcess;
 
-namespace Ignition.Net;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Bonfire.Hosting;
 
 /// <summary>
 /// Extension methods for running a <see cref="WindowsService"/> in a <see cref="IIgnitable"/> instance.
