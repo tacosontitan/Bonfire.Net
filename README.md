@@ -31,11 +31,7 @@ We believe in keeping the community informed, so here's a few more tidbits of in
 
 ## 🔥 Working with Bonfire.Net
 
-The primary objective of Bonfire.Net is to make it easy to add hosting and dependency injection to your .NET Framework applications. To do this, we offer a `static class` called `Ignite` that provides a simple way to bootstrap your application:
-
-```csharp
-public static void Main(string[] args) => Ignite.Run();
-```
+The primary objective of Bonfire.Net is to make it easy to add hosting and dependency injection to your .NET Framework applications. To do this, we offer a `static class` called `Ignite` that provides a simple way to bootstrap your application.
 
 ### ⚙️ Configuring the host
 
@@ -50,13 +46,13 @@ public static void Main(string[] args) =>
 You can also configure the host manually by providing an `Action<IHostBuilder>`:
 
 ```csharp
-public static void Main() =>
+public static void Main(string[] args) =>
     Ignite.Configure(builder =>
     {
         builder.UseContentRoot(Directory.GetCurrentDirectory());
         builder.UseEnvironment(EnvironmentName.Development);
         builder.UseStartup<Startup>();
-    })
+    }, args)
     .Run();
 ```
 
