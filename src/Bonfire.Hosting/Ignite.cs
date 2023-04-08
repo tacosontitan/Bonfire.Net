@@ -39,12 +39,8 @@ public static class Ignite
     /// Configures a new host using the specified <see cref="Action{T}"/>.
     /// </summary>
     /// <param name="configure">The <see cref="Action{T}"/> to configure the host.</param>
+    /// <param name="args"></param>
     /// <returns>The current <see cref="IIgnitable"/> instance.</returns>
-    public static IIgnitable Configure(Action<IHostBuilder> configure) =>
-        new IgnitableHost().Configure(configure);
-    /// <summary>
-    /// Runs the the application with hosting support.
-    /// </summary>
-    public static void Run() =>
-        new IgnitableHost().Run();
+    public static IIgnitable Configure(Action<IHostBuilder> configure, params string[] args) =>
+        new IgnitableHost(args).Configure(configure);
 }
