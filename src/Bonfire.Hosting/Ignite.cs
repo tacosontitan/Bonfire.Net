@@ -36,6 +36,17 @@ public static class Ignite
         where T : class, new() =>
         new IgnitableHost(args).UseStartup<T>(args);
     /// <summary>
+    /// Creates a new <see cref="IIgnitable"/> instance using the specified startup type.
+    /// </summary>
+    /// <typeparam name="T">The type containing the startup methods for the application.</typeparam>
+    /// <param name="args">The command line arguments to be passed to the application.</param>
+    /// <remarks>
+    /// This method should be called from the main thread of your application.
+    /// </remarks>
+    public static IIgnitable UseIgnition<T>(params string[] args)
+        where T : Ignition, new() =>
+        new IgnitableHost(args).UseStartup<T>(args);
+    /// <summary>
     /// Configures a new host using the specified <see cref="Action{T}"/>.
     /// </summary>
     /// <param name="configure">The <see cref="Action{T}"/> to configure the host.</param>
