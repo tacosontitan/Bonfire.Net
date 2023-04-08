@@ -9,7 +9,7 @@ namespace ConsoleExample;
 
 internal sealed class FibonacciService : IHostedService
 {
-    private ILogger _logger;
+    private readonly ILogger _logger;
     public FibonacciService(ILogger<FibonacciService> logger) =>
         _logger = logger;
     public async Task StartAsync(CancellationToken cancellationToken)
@@ -24,7 +24,7 @@ internal sealed class FibonacciService : IHostedService
         }
 
         // Determines the nth Fibonacci number.
-        int Fibonacci(int n) => n switch
+        static int Fibonacci(int n) => n switch
         {
             0 => 1,
             1 => 1,

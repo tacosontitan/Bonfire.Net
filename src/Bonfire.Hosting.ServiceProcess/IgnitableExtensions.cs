@@ -23,7 +23,7 @@ namespace Bonfire.Hosting;
 /// <summary>
 /// Extension methods for running a <see cref="WindowsService"/> in a <see cref="IIgnitable"/> instance.
 /// </summary>
-public static class IgnitableWindowsServiceExtensions
+public static class IgnitableExtensions
 {
     /// <summary>
     /// Runs the specified <see cref="WindowsService"/> type.
@@ -35,7 +35,5 @@ public static class IgnitableWindowsServiceExtensions
     /// </remarks>
     public static void Run<T>(this IIgnitable instance)
         where T : WindowsService =>
-        instance.Configure(hostBuilder => hostBuilder.ConfigureServices((_, services) => {
-            services.AddHostedService<T>();
-        })).Run();
+        instance.Configure(hostBuilder => hostBuilder.ConfigureServices((context, services) => _ = services.AddHostedService<T>())).Run();
 }

@@ -9,7 +9,7 @@ namespace StandardizedStartup.Mocking;
 
 internal sealed class PrinterService : IHostedService
 {
-    private ILogger _logger;
+    private readonly ILogger _logger;
     public PrinterService(ILogger<PrinterService> logger) =>
         _logger = logger;
     public async Task StartAsync(CancellationToken cancellationToken)
