@@ -14,6 +14,8 @@
  * limitations under the License.
  **************************************************************************/
 
+using System;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Microsoft.Extensions.Hosting;
@@ -52,7 +54,7 @@ public static class HostExtensions
                 new object[] { builder }
             );
         }
-        catch { /* Gracefully ignore. */ }
+        catch (MissingMethodException) { /* Gracefully ignore. */ }
     }
 
     private static void ConfigureServices<T>(T startup, IServiceCollection services)
@@ -68,6 +70,6 @@ public static class HostExtensions
                 new object[] { services }
             );
         }
-        catch { /* Gracefully ignore. */ }
+        catch (MissingMethodException) { /* Gracefully ignore. */ }
     }
 }
