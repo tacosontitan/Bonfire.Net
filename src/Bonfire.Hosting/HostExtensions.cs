@@ -44,7 +44,7 @@ public static class HostExtensions
         try
         {
             // Invoke the Configure method on the startup instance.
-            typeof(T).InvokeMember(
+            _ = typeof(T).InvokeMember(
                 "Configure",
                 System.Reflection.BindingFlags.InvokeMethod,
                 null,
@@ -60,7 +60,7 @@ public static class HostExtensions
         try
         {
             // Invoke the ConfigureServices method on the startup instance.
-            typeof(T).InvokeMember(
+            _ = typeof(T).InvokeMember(
                 "ConfigureServices",
                 System.Reflection.BindingFlags.InvokeMethod,
                 null,
