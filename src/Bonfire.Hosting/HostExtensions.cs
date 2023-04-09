@@ -31,7 +31,7 @@ public static class HostExtensions
     public static IHostBuilder UseStartup<T>(this IHostBuilder hostBuilder)
         where T : class, new()
     {
-        return hostBuilder.ConfigureServices((hostContext, services) =>
+        return hostBuilder.ConfigureServices((_, services) =>
         {
             var startup = new T();
             Configure(startup, hostBuilder);
