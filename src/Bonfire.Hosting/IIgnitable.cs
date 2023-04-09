@@ -15,6 +15,8 @@
  */
 
 using System;
+using System.Threading.Tasks;
+
 using Microsoft.Extensions.Hosting;
 
 namespace Bonfire.Hosting;
@@ -44,4 +46,11 @@ public interface IIgnitable
     /// This method should be called from the main thread of your application.
     /// </remarks>
     void Run();
+    /// <summary>
+    /// Runs the the application with hosting and dependency injection support.
+    /// </summary>
+    /// <remarks>
+    /// This method should be called from the main thread of your application.
+    /// </remarks>
+    Task RunAsync();
 }

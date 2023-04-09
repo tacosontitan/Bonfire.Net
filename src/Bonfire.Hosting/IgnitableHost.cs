@@ -15,6 +15,8 @@
  */
 
 using System;
+using System.Threading.Tasks;
+
 using Microsoft.Extensions.Hosting;
 
 namespace Bonfire.Hosting;
@@ -65,5 +67,16 @@ public class IgnitableHost : IIgnitable
     {
         IHost host = _hostBuilder.Build();
         host.Run();
+    }
+    /// <summary>
+    /// Runs the the application with hosting and dependency injection support.
+    /// </summary>
+    /// <remarks>
+    /// This method should be called from the main thread of your application.
+    /// </remarks>
+    public async Task RunAsync()
+    {
+        IHost host = _hostBuilder.Build();
+        await host.RunAsync();
     }
 }

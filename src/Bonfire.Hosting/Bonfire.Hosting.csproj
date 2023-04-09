@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Title>$(AssemblyName)</Title>
-		<Version>2023.4.8.3</Version>
+		<Version>2023.4.8.4</Version>
 		<PackageVersion>$(AssemblyVersion)</PackageVersion>
 		<Authors>tacosontitan</Authors>
 		<Copyright>Copyright © 2023 tacosontitan and contibutors</Copyright>
