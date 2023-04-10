@@ -51,7 +51,7 @@
 	<ItemGroup Label="PackageReferences">
 		<PackageReference Include="Bonfire.Hosting" Version="2023.4.8.4" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
 	</ItemGroup>
 
 	<ItemGroup Label="LegacyAssemblies">
