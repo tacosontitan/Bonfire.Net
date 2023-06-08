@@ -1,21 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net48</TargetFramework>
+		<TargetFramework>netstandard2.0</TargetFramework>
 		<Title>$(AssemblyName)</Title>
-		<Version>2023.4.8.3</Version>
+		<Version>2023.6.1</Version>
 		<PackageVersion>$(AssemblyVersion)</PackageVersion>
 		<Authors>tacosontitan</Authors>
 		<Copyright>Copyright © 2023 tacosontitan and contibutors</Copyright>
 		<PackageProjectUrl>https://github.com/tacosontitan/Bonfire.Net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/tacosontitan/Bonfire.Net</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>host;hosting;dotnet;di;dependency;injection;startup</PackageTags>
+		<PackageTags>token;lexicon;lexeme;language;intepreter;replace;string</PackageTags>
 		<PackageReleaseNotes>Initial release.</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<AssemblyVersion>$(PackageVersion)</AssemblyVersion>
 		<FileVersion>$(PackageVersion)</FileVersion>
-		<Description>A lightweight solution that effectively reduces the boilerplate for adding hosting and dependency injection support to your applications.</Description>
+		<Description>A lightweight solution for replacing tokens within strings.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>bonfire.png</PackageIcon>
@@ -35,27 +35,17 @@
 
 	<ItemGroup>
 		<None Include="..\..\LICENSE">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
 		<None Include="..\..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 		<None Include="..\..\resources\bonfire.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup Label="PackageReferences">
-		<PackageReference Include="Bonfire.Hosting" Version="2023.4.8.4" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
-	</ItemGroup>
-
-	<ItemGroup Label="LegacyAssemblies">
-		<Reference Include="System.ServiceProcess" />
 	</ItemGroup>
 
 </Project>
